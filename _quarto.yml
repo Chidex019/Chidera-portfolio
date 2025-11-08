@@ -2,18 +2,18 @@ project:
   type: website
   output-dir: docs
 website:
-  title: "David Orizu Portfolio"
+  title: "Chidera Orizu's Portfolio"
   favicon: Images/favicon.png
   back-to-top-navigation: true
-  repo-url: https://github.com/davidorizu//davidorizu2.git
+  repo-url: https://github.com/Chidex019/Chidera-portfolio.git
   #repo-actions: [issue] #if you want to allow others to report issues on your site uncomment this line
 
   page-footer: 
     border: true
-    left: "David Orizu 2024"
+    left: "Chidera Orizu 2025"
     right: 
       - icon: linkedin
-        href: https://www.linkedin.com/in/david-orizu-935508248/
+        href: https://www.linkedin.com/in/chidera-orizu-8b5662250/
 
   navbar:
     background: primary
@@ -23,48 +23,22 @@ website:
         file: index.qmd
       - text: "My Resume"
         file: resume.qmd
-      - text: "Data Analysis"
-        file: data_analysis/car_prices.qmd
-      - text: "Machine Learning"
-        file: Machine_Learning/breast_cancer.qmd
+      - text: "consulting project"
+        file: projects/consulting.Rmd
     
   
   # learn more about navication here https://quarto.org/docs/websites/website-navigation.html
   # comment out any of the sections below to turn off the sidebar
 
   sidebar: 
-    - title: "Data Analysis"
+    - title: "Chi squared project"
       style: "docked"
       background: light
       contents:
-        - text: "Car Prices"
-          file: data_analysis/car_prices.qmd
-        - text: "---"
-        - text: "Cancer Analysis"
-          file: data_analysis/cancer_analysis.qmd
-        - text: "---"
-        - text: "Reaction time Analysis"
-          file: data_analysis/reaction_time.qmd
+        - text: "Chi squared project"
+          file: projects/MyChisquaredTest.Rmd
         - text: "---"
         
-    
-    - title: "Machine Learning"
-      style: "docked"
-      background: light
-      contents:
-        - text: "Breast Cancer Detection"
-          file: Machine_Learning/breast_cancer.qmd
-        - text: "---"
-        - text: "Bikes Sales"
-          file: Machine_Learning/bikes.qmd
-        - text: "---"
-        - text: "Housing Estimates"
-          file: Machine_Learning/housing.qmd
-        - text: "---"
-        - text: "Music Analysis"
-          file: Machine_Learning/top_spotify_analysis.qmd
-        - text: "---"
-       
     
 format:  
   html:
