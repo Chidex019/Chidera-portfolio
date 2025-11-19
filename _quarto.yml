@@ -1,6 +1,8 @@
 project: 
   type: website
   output-dir: docs
+  resources:
+    - .nojekyll
 website:
   title: "Chidera Orizu's Portfolio"
   favicon: Images/favicon.png
