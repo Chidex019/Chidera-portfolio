@@ -49,13 +49,6 @@
     "text": "Conclusion\nThe results of the analysis shows that each of the different eating changes all have the same effect on a persons body weight, or even if the effects aren’t exactly the same the difference is too little to be considered.So if a person really wants to alter their body weights changing their eating habits wont be the only thing that will help them accomplish this.we were able to conclude this because from our analysis above we can see that the test had a p-value of 0.06115 and as compared to our significance level (0.05) we will fail to reject our null hypothesis because there is in sufficient evidence for the alternative. The link below contains some popular weigth loss and weight gain methods. Weight loss methods\nweight gain method"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to my Portfolio",
-    "section": "",
-    "text": "The foundational quality of my journey has been my commitment to continuous learning and the ability to adapt in the face of growing challenges. My contributions have played a vital role in the success of my projects and teams. My passion for data science and analysis powers my drive to always stay ahead of the curve. I thrive in environments where I can use my skills to acquire insights from data.\nCommitted to success, I look forward to connecting with like-minded professionals and exploring opportunities to contribute my skills to success-thinking organizations. I am ready to leverage my experience and skills to make a significant impact in my next role. If you are looking for a dedicated professional who can aid positive change and strive to deliver relevant results, let us connect and explore how we can work together to achieve mutual goals.\nPlease click on the project tabs.\n\n\n\n Back to top"
-  },
-  {
     "objectID": "about_me.html",
     "href": "about_me.html",
     "title": "about_me",
@@ -63,53 +56,11 @@
     "text": "I am a student at BYU-I. I love statistics, biology, and programming.\n\n\n\n Back to top"
   },
   {
-    "objectID": "projects/consulting.html",
-    "href": "projects/consulting.html",
-    "title": "Lung cancer analysis",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to my Portfolio",
     "section": "",
-    "text": "library(mosaic)\nlibrary(ResourceSelection) \nlibrary(tidyverse)\nlibrary(pander)\nlibrary(DT)\nlibrary(plotly)\nlibrary(ggplot2)\ncancer &lt;- read_csv(\"cancer.csv\")\ncancer &lt;- cancer[1:300, ]\ncancer&lt;- cancer %&gt;% select(c(Patient_Id,Age,Gender,Air_Pollution,Genetic_Risk,Smoking,Alcohol_use,cancer))\ncancer$Air_Pollution&lt;-as.numeric(cancer$Air_Pollution)\ncancer$Genetic_Risk&lt;-as.numeric(cancer$Genetic_Risk)\ncancer$Smoking&lt;-as.numeric(cancer$Smoking)\ncancer$Alcohol_use&lt;-as.numeric(cancer$Alcohol_use)\ncancer$cancer&lt;-as.numeric(cancer$cancer)\ncancer$Gender&lt;-as.factor(cancer$Gender)"
-  },
-  {
-    "objectID": "projects/consulting.html#conclusion-from-analysis",
-    "href": "projects/consulting.html#conclusion-from-analysis",
-    "title": "Lung cancer analysis",
-    "section": "Conclusion from analysis",
-    "text": "Conclusion from analysis\nFrom the analysis, following the p-value’s given to us to know if each factor actually contributes to lung cancer,(p-value’s: 0.6713, 0.5063, 0.2223, 0.999) it shows us that they dont because we failed to reject the null hypothesis for each factor(all p-values &gt; 0.05).But just like I said earlier its a small subset and doesn’t represent the general population. And then looking at the graph it tells us that out of each factor air pollution is the most likely factor to cause lung cancer as compared to the others.From the slope of the air pollution factor, we can see that the probability of getting lung cancer increases by a factor of 1.043176 for every one unit increase in air pollution exposure. Commonly most online sources would say that smoking will have a way higher probability out of all the other factors but from what we have it shows that air pollution surpasses it for this data set.Now because our p-value’s are not significant that means the result of this analysis are all by random chance.And so in order to get more reliable information on this it would be advised that more research and statistical analysis should be conducted to know more about the effects on this factors especially air pollution on lung cancer.\n\nplot(1, type = \"n\", xlim = c(min(cancer$Air_Pollution), max(cancer$Air_Pollution)),\n     ylim = c(0, 1), \n     xlab = \"Levels of Exposure to Lung Cancer Causes\", \n     ylab = \"Probability of Getting Lung Cancer\",\n     main = \"Leading Risk Factors for Lung Cancer\")\ncurve(exp(-0.3725 + 0.1671*x) / (1 + exp(-0.3725 + 0.1671*x)), add = TRUE, col = palette()[1]) # Air Pollution\ncurve(exp(-0.3725 + -0.02135*x) / (1 + exp(-0.3725 + -0.02135*x)), add = TRUE, col = palette()[2]) # Genetic Risk\ncurve(exp(-0.3725 + 0.05965*x) / (1 + exp(-0.3725 + 0.05965*x)), add = TRUE, col = palette()[3]) # Smoking\ncurve(exp(-0.3725 + -0.04474*x) / (1 + exp(-0.3725 + -0.04474*x)), add = TRUE, col = palette()[4]) # Alcohol Use\nlegend(\"topleft\", legend = c(\"Air Pollution\", \"Genetic Risk\", \"Smoking\", \"Alcohol Use\"), \n       title = \"Lung Cancer Causing Factors\", col = palette(), lty = 1, bty = \"n\", cex = 0.8)\n\n\n\n\n\n\n\n\nNow from the graph above we can see that the x-axis displays the levels from 1-8 indicating their perceived exposure to the risk factors not the actual because they were asked to give themselves the rating, with 1 meaning extremely low,2 meaning very low,3 meaning low,4 meaning fairly moderate,5 meaning moderate,6 meaning high,7 meaning very high and 8 meaning extremely high. And out of all the lung cancer causing factors the one that’s going to have the highest probability of actually causing the cancer would be air pollution, followed by smoking and then genetic risk before alcohol use."
-  },
-  {
-    "objectID": "projects/consulting.html#background",
-    "href": "projects/consulting.html#background",
-    "title": "Lung cancer analysis",
-    "section": "Background",
-    "text": "Background\nLung cancer is among the leading causes of death in the world. It is influenced by many environmental and genetic factors. Some of the most common causes as of the 21st centuary according to john hopkins medicine are air pollution, genes, smoking, and alcohol in-take, which have been studied extensively as possible causes. This analysis wants to find out which of these factors is most closely linked to the chances of getting lung cancer. This study aims to find out the major cause. It will provide specific information for focused prevention plans and public health action."
-  },
-  {
-    "objectID": "projects/consulting.html#data",
-    "href": "projects/consulting.html#data",
-    "title": "Lung cancer analysis",
-    "section": "Data",
-    "text": "Data\nFor this analysis we would be using the lung cancer prediction data set from kaggle. In the data we have over 300 people in which some have been diagnosed with lung cancer and some haven’t. The patients where then interviewed and medically tested to know how well they’ve been exposed to these cancer linked factors.They were then given a score on a scale of 1 to 10 based on their exposure level.In the group they were also assigned either a zero or a one indicating that they dont have lung cancer or they do. Below is a table with the data set. dataset info."
-  },
-  {
-    "objectID": "projects/consulting.html#section",
-    "href": "projects/consulting.html#section",
-    "title": "Lung cancer analysis",
-    "section": "",
-    "text": "Hide\n\n\nShow data\n\ndatatable(cancer)"
-  },
-  {
-    "objectID": "projects/consulting.html#analysis",
-    "href": "projects/consulting.html#analysis",
-    "title": "Lung cancer analysis",
-    "section": "Analysis",
-    "text": "Analysis\nIn this analysis we are trying to know which of the four major causes of lung cancer has the highest probability of causing the illness and where the others rank next to it. In order to do this we would need to conduct a multiple logistics regression. For the hypothesis we want to know if these factors do indeed have an effect on a person causing cancer. we will do the hypothesis starting from air pollution and then genetic risk, smoking and finally alcohol use.We will use the slopes for the hypthesis testing because they show the relationship between the factors and the probability that a person does get lung cancer. \\[\nH_0: \\beta_1 = 0 \\text{ (air pollution has no effect)}\\\\\n  H_a: \\beta_1 \\neq 0 \\text{ (air pollution has an effect)}\n\\]\n\\[\nH_0: \\beta_2 = 0 \\text{ (genetic risk has no effect)}\\\\\n  H_a: \\beta_2 \\neq 0 \\text{ (genetic risk has an effect)}\n\\]\n\\[\nH_0: \\beta_3 = 0 \\text{ (smoking has no effect)}\\\\\n  H_a: \\beta_3 \\neq 0 \\text{ (smoking has an effect)}\n\\] \\[\nH_0: \\beta_4 = 0 \\text{ (alcohol use has no effect)}\\\\\n  H_a: \\beta_4 \\neq 0 \\text{ (alcohol use has an effect)}\n\\]\n\\[\n  α = 0.05\n\\]\nAs we can see the alternative hypothesis tells us that the slope for each factor can cause cancer if that slope is not equal to zero and the null tells us the exact opposite which is the factor will not cause cancer if its slope is equal to zero.and we have our alpha level of 0.05 that tells us if we can reject or fail to reject the null. For the model of the multiple logistic regression it is going to look exactly like the simple logistic but with more x values representing the different cancer causing factors. In the model pi stands for the probability and e for the error term. Below is the regression model and summary of the regression containing the intercept slopes and p-value’s.\n\\[\nP(Y_i = 1|\\, x_{i1},x_{i2},x_{i3},x_{i4}) = \\frac{e^{\\beta_0 + \\beta_1 x_{i1} + \\beta_2 x_{i2} + \\beta_3 x_{i3} + \\beta_4 x_{i4}}}{1+e^{\\beta_0 + \\beta_1 x_{i1} + \\beta_2 x_{i2} + \\beta_3 x_{i3} + \\beta_4 x_{i4}}} = \\pi_i\n\\]\n\ncnn.glm&lt;-glm(cancer&gt;0 ~ Air_Pollution + Genetic_Risk + Smoking + Alcohol_use,data=cancer,family=binomial)\n\n\nsummary(cnn.glm)%&gt;%pander()\n\n\n\n\n\n\n\n\n\n\n\n \nEstimate\nStd. Error\nz value\nPr(&gt;|z|)\n\n\n\n\n(Intercept)\n1.125\n0.3536\n3.183\n0.00146\n\n\nAir_Pollution\n0.04227\n0.0996\n0.4244\n0.6713\n\n\nGenetic_Risk\n-0.08541\n0.1285\n-0.6646\n0.5063\n\n\nSmoking\n0.08286\n0.06789\n1.221\n0.2223\n\n\nAlcohol_use\n0.0001368\n0.1128\n0.001213\n0.999\n\n\n\n(Dispersion parameter for binomial family taken to be 1 )\n\n\n\n\n\n\n\nNull deviance:\n323.6 on 299 degrees of freedom\n\n\nResidual deviance:\n321.6 on 295 degrees of freedom\n\n\n\n\n\nfrom the summary we can see the y-intercept and the slopes from each factor,and from the p-values we can see that none of the factors from this analysis is significant. Please note that this doesn’t mean that these factors don’t contribute to lung cancer, because this data set doesn’t represent the world population but only a really small portion of it.\nAnd to test for the goodness of fit for this logistic regression we can do the Hosmer-Lemeshow test.The null assumes the logistic regression is a good fit. As shown below, there is insufficient evidence to reject the null (p=0.9164) so we will conclude a good logistic fit on these data.\n\nhoslem.test(cnn.glm$y, cnn.glm$fitted) %&gt;% pander(caption=\"Hosmer-Lemeshow Goodness-of-Fit Test\")\n\n\nHosmer-Lemeshow Goodness-of-Fit Test\n\n\n\n\n\n\n\nTest statistic\ndf\nP value\n\n\n\n\n3.269\n8\n0.9164"
-  },
-  {
-    "objectID": "projects/consulting.html#analysis-1",
-    "href": "projects/consulting.html#analysis-1",
-    "title": "Lung cancer analysis",
-    "section": "Analysis",
-    "text": "Analysis\nFor this analysis we are trying to know if age and coffee type are independent or associated and if they are associated what they exact correlation would be. We would now be conducting a hypothesis test to know if they are independent or not.\n\\[\nH_0: \\text{Age and coffee type are independent}.\n\\]\n\\[\nH_0: \\text{Age and coffee type are not independent(associated)}.\n\\] \\[\n\\alpha = 0.05\n\\]"
+    "text": "The foundational quality of my journey has been my commitment to continuous learning and the ability to adapt in the face of growing challenges. My contributions have played a vital role in the success of my projects and teams. My passion for data science and analysis powers my drive to always stay ahead of the curve. I thrive in environments where I can use my skills to acquire insights from data.\nCommitted to success, I look forward to connecting with like-minded professionals and exploring opportunities to contribute my skills to success-thinking organizations. I am ready to leverage my experience and skills to make a significant impact in my next role. If you are looking for a dedicated professional who can aid positive change and strive to deliver relevant results, let us connect and explore how we can work together to achieve mutual goals.\nPlease click on the project tabs.\n\n\n\n Back to top"
   },
   {
     "objectID": "projects/MyChiSquaredTest.html",
