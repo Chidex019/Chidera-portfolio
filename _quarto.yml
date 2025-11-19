@@ -27,6 +27,8 @@ website:
         file: resume.qmd
       - text: "consulting project"
         file: projects/consulting.Rmd
+      - text: "MyChisquaredTest"
+        file: projects/MyChiSquaredTest.Rmd
     
   
   # learn more about navication here https://quarto.org/docs/websites/website-navigation.html
