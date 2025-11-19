@@ -7,6 +7,62 @@
     "text": "hi\n\n\n\n Back to top"
   },
   {
+    "objectID": "projects/Food.html",
+    "href": "projects/Food.html",
+    "title": "Food at College",
+    "section": "",
+    "text": "# From your file menu (at the top of R-Studio) select:\n# \"Session -&gt; Set working directory -&gt; To source file location\"\n# Then play this chunk to get the data into R.\nlibrary(mosaic)\nlibrary(car)\nlibrary(DT)\nlibrary(pander)\nlibrary(readr)\nlibrary(plotly)\nlibrary(tidyverse)\nfood &lt;- read_csv(\"food.csv\") #food.csv is in the Data folder...\n\nnew&lt;-food %&gt;% select(c(weight,eating_changes_coded))\n\nnew&lt;-filter(new,eating_changes_coded != \"unclear\")\n\nnew &lt;- new[-3, ]"
+  },
+  {
+    "objectID": "projects/Food.html#background",
+    "href": "projects/Food.html#background",
+    "title": "Food at College",
+    "section": "Background",
+    "text": "Background\nThe linkage of diet with weight management has drawn some interest in recent years, with the spiraling prevalence of obesity and related metabolic conditions in many parts of the world. Though there is documented evidence that what we consume greatly influences body weight, much about how changes in eating habits contribute differently toward weight is still highly elusive. While some reveal striking weight change with either an improvement or deterioration in diet, others seem to be unaffected by similar alterations. These observations raise the following questions: whether same, better, or worse eating behavioral changes-represent weight change uniformly across individuals."
+  },
+  {
+    "objectID": "projects/Food.html#data",
+    "href": "projects/Food.html#data",
+    "title": "Food at College",
+    "section": "Data",
+    "text": "Data\nIn this analysis we want to look at different people’s eating changes to know if each change equally affects a person’s weight or not. The different eating changes have been coded with ‘same’, ‘worse’ and ’better’The people in this analysis they were asked to honestly document what they feel about their eating changes and they had to select which of three opitions best suits them. Below is a data with the results of this questionaire"
+  },
+  {
+    "objectID": "projects/Food.html#section",
+    "href": "projects/Food.html#section",
+    "title": "Food at College",
+    "section": "",
+    "text": "Hide\n\n\nShow table\n\ndatatable(new)"
+  },
+  {
+    "objectID": "projects/Food.html#analysis",
+    "href": "projects/Food.html#analysis",
+    "title": "Food at College",
+    "section": "Analysis",
+    "text": "Analysis\nFrom our sample we can graphically compare the weights and eating changes of our analysis participants to know what the common trend is in their weights with reference to their eating changes.\n\nlibrary(plotly)\n\nplot_ly(new, y = ~weight, x = ~as.factor(eating_changes_coded), \n        color = ~as.factor(eating_changes_coded), \n        type = \"box\", \n        colors = \"Set3\") %&gt;%\n  layout(\n    title = list(\n      text = \"Effects of new habits on a persons weight\",\n      x = 0.5,\n      xanchor = \"center\",\n      font = list(size = 18, color = 'rgb(34,34,34)')\n    ),\n    xaxis = list(\n      title = \"Different Eating Changes\",\n      titlefont = list(size = 14),\n      tickfont = list(size = 12),\n      tickangle = -45  # Rotate x-axis labels for readability\n    ),\n    yaxis = list(\n      title = \"Weight (lbs)\",\n      titlefont = list(size = 14),\n      tickfont = list(size = 12)\n    ),\n    showlegend = FALSE\n  )\n\n\n\n\n\n\nnew&lt;-na.omit(new)\nnew &lt;- new[-3, ]\nnew$weight&lt;- as.numeric(new$weight)\nnew$eating_changes_coded &lt;- as.factor(new$eating_changes_coded)\nfavstats(as.numeric(weight)~eating_changes_coded,main=\"mean of weights for the different eating changes\",data=droplevels(new)) %&gt;%\n  pander(caption= \"mean weight of each group\", split.table=Inf)\n\n\nmean weight of each group\n\n\n\n\n\n\n\n\n\n\n\n\n\n\neating_changes_coded\nmin\nQ1\nmedian\nQ3\nmax\nmean\nsd\nn\nmissing\n\n\n\n\nbetter\n100\n136.5\n169.5\n186.2\n264\n166.8\n37.53\n36\n0\n\n\nthe same\n116\n142.5\n180\n188.8\n265\n174.6\n43.53\n10\n0\n\n\nworse\n105\n135\n150\n170\n230\n152.6\n24.52\n71\n1\n\n\n\n\n\nAbove we have the box plots with some numerical summary and a table of means for each group.From this data we see that the same group have on average people with the highest weight(174.6).Right after them is the better group(166.8) and then the worse(152.6). Looking at the box plot we can take the cursor to each box and it will display more information about that particular group, and we can use this to compare more data.\nNow for the true purpose of this analysis we want to know if each eating change has the same effect on weight or if at least one has a different effect. And for us to do this we just need to know if all groups belong to the same sampling distribution. \\[\nH_0:\\text{ (All eating change groups belong to the same sample distribution)}\\\\\n\\] \\[\nH_0:\\text{ (At least one group is stochastically different than the others)}\\\\\n\\]\n\\[\nα=0.05\n\\]\n\nkruskal.test(weight~eating_changes_coded,data=new) %&gt;% pander()\n\n\nKruskal-Wallis rank sum test: weight by eating_changes_coded\n\n\n\n\n\n\n\nTest statistic\ndf\nP value\n\n\n\n\n5.589\n2\n0.06115"
+  },
+  {
+    "objectID": "projects/Food.html#conclusion",
+    "href": "projects/Food.html#conclusion",
+    "title": "Food at College",
+    "section": "Conclusion",
+    "text": "Conclusion\nThe results of the analysis shows that each of the different eating changes all have the same effect on a persons body weight, or even if the effects aren’t exactly the same the difference is too little to be considered.So if a person really wants to alter their body weights changing their eating habits wont be the only thing that will help them accomplish this.we were able to conclude this because from our analysis above we can see that the test had a p-value of 0.06115 and as compared to our significance level (0.05) we will fail to reject our null hypothesis because there is in sufficient evidence for the alternative. The link below contains some popular weigth loss and weight gain methods. Weight loss methods\nweight gain method"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to my Portfolio",
+    "section": "",
+    "text": "The foundational quality of my journey has been my commitment to continuous learning and the ability to adapt in the face of growing challenges. My contributions have played a vital role in the success of my projects and teams. My passion for data science and analysis powers my drive to always stay ahead of the curve. I thrive in environments where I can use my skills to acquire insights from data.\nCommitted to success, I look forward to connecting with like-minded professionals and exploring opportunities to contribute my skills to success-thinking organizations. I am ready to leverage my experience and skills to make a significant impact in my next role. If you are looking for a dedicated professional who can aid positive change and strive to deliver relevant results, let us connect and explore how we can work together to achieve mutual goals.\nPlease click on the project tabs.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "about_me.html",
+    "href": "about_me.html",
+    "title": "about_me",
+    "section": "",
+    "text": "I am a student at BYU-I. I love statistics, biology, and programming.\n\n\n\n Back to top"
+  },
+  {
     "objectID": "projects/consulting.html",
     "href": "projects/consulting.html",
     "title": "Lung cancer analysis",
@@ -54,20 +110,6 @@
     "title": "Lung cancer analysis",
     "section": "Analysis",
     "text": "Analysis\nFor this analysis we are trying to know if age and coffee type are independent or associated and if they are associated what they exact correlation would be. We would now be conducting a hypothesis test to know if they are independent or not.\n\\[\nH_0: \\text{Age and coffee type are independent}.\n\\]\n\\[\nH_0: \\text{Age and coffee type are not independent(associated)}.\n\\] \\[\n\\alpha = 0.05\n\\]"
-  },
-  {
-    "objectID": "about_me.html",
-    "href": "about_me.html",
-    "title": "about_me",
-    "section": "",
-    "text": "I am a student at BYU-I. I love statistics, biology, and programming.\n\n\n\n Back to top"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome to my Portfolio",
-    "section": "",
-    "text": "The foundational quality of my journey has been my commitment to continuous learning and the ability to adapt in the face of growing challenges. My contributions have played a vital role in the success of my projects and teams. My passion for data science and analysis powers my drive to always stay ahead of the curve. I thrive in environments where I can use my skills to acquire insights from data.\nCommitted to success, I look forward to connecting with like-minded professionals and exploring opportunities to contribute my skills to success-thinking organizations. I am ready to leverage my experience and skills to make a significant impact in my next role. If you are looking for a dedicated professional who can aid positive change and strive to deliver relevant results, let us connect and explore how we can work together to achieve mutual goals.\nPlease click on the project tabs.\n\n\n\n Back to top"
   },
   {
     "objectID": "projects/MyChiSquaredTest.html",

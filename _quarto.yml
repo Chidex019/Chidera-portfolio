@@ -25,8 +25,8 @@ website:
         file: index.qmd
       - text: "My Resume"
         file: resume.qmd
-      - text: "consulting project"
-        file: projects/consulting.Rmd
+      - text: "Eating habit analysis"
+        file: projects/Food.Rmd
       - text: "MyChisquaredTest"
         file: projects/MyChiSquaredTest.Rmd
     
