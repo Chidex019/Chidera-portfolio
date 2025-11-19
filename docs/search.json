@@ -56,6 +56,13 @@
     "text": "Analysis\nFor this analysis we are trying to know if age and coffee type are independent or associated and if they are associated what they exact correlation would be. We would now be conducting a hypothesis test to know if they are independent or not.\n\\[\nH_0: \\text{Age and coffee type are independent}.\n\\]\n\\[\nH_0: \\text{Age and coffee type are not independent(associated)}.\n\\] \\[\n\\alpha = 0.05\n\\]"
   },
   {
+    "objectID": "about_me.html",
+    "href": "about_me.html",
+    "title": "about_me",
+    "section": "",
+    "text": "I am a student at BYU-I. I love statistics, biology, and programming.\n\n\n\n Back to top"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome to my Portfolio",

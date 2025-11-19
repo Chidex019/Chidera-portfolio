@@ -1,0 +1,6 @@
+---
+title: "about_me"
+format: html
+---
+
+I am a student at BYU-I. I love statistics, biology, and programming.
